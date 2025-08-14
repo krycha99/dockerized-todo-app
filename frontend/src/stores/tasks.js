@@ -41,5 +41,18 @@ export const useTasksStore = defineStore('tasks', () => {
     }
   }
 
-  return { tasks, loading, error, fetchTasks, addTask, deleteTask }
+  async function updateTask(task) {
+  try {
+    await api.patch(`/tasks/${encodeURIComponent(task.title)}`, { done: task.done })
+    
+    const index = tasks.value.findIndex(t => t.title === task.title)
+    if (index !== -1) {
+      tasks.value[index] = { ...task }
+    }
+  } catch (e) {
+    error.value = 'Failed to update task'
+  }
+}
+
+  return { tasks, loading, error, fetchTasks, addTask, deleteTask, updateTask }
 })

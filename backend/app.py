@@ -34,5 +34,22 @@ def delete_task(title):
         return jsonify({"error": "Task not found"}), 404
     return jsonify({"message": "Taske deleted"}), 200
 
+@app.route("/tasks/<title>", methods=['PATCH'])
+def update_task(title):
+    data = request.json
+    if not data or "done" not in data:
+        return jsonify({"error": "'done' field is required"}), 400
+
+    result = tasks_collection.update_one(
+        {"title": title},
+        {"$set": {"done": data["done"]}}
+    )
+
+    if result.matched_count == 0:
+        return jsonify({"error": "Task not found"}), 404
+
+    task = tasks_collection.find_one({"title": title}, {"_id": 0})
+    return jsonify(task), 200
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

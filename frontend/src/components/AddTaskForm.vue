@@ -12,8 +12,8 @@ function onSubmit() {
 
 <template>
   <form @submit.prevent="onSubmit" class="form">
-    <input v-model="title" placeholder="Nowe zadanie..." />
-    <button type="submit">Dodaj</button>
+    <input type="text" v-model="title" placeholder="New tasks..." />
+    <button type="submit" class="add-btn">Add task</button>
   </form>
 </template>
 

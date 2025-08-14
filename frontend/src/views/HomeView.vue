@@ -5,7 +5,7 @@ import TaskList from '../components/TaskList.vue'
 
 <template>
   <main class="container">
-    <h1>Todo App</h1>
+    <h1 class="title">Todo App</h1>
     <AddTaskForm />
     <TaskList />
   </main>
