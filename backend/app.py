@@ -5,8 +5,10 @@ import os
 app = Flask(__name__)
 
 # MongoDB config
-client = MongoClient("mongodb://localhost:27017/tododb")
-tasks_collection = client["tododb"]["tasks"]
+mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017/tododb")
+client = MongoClient(mongo_uri)
+db = client["tododb"]
+tasks_collection = db["tasks"]
 
 @app.route('/')
 def home():

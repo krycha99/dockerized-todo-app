@@ -1,14 +1,17 @@
+import os
 import pytest
 from pymongo import MongoClient
 from app import app
 
 @pytest.fixture
 def client(monkeypatch):
+    mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017/testdb")
     
     test_client = app.test_client()
-
-    test_db = MongoClient()["testdb"]
+    test_db = MongoClient(mongo_uri)["testdb"]
+    
     test_db["tasks"].delete_many({})
+    
     monkeypatch.setattr("app.tasks_collection", test_db["tasks"])
 
     return test_client
