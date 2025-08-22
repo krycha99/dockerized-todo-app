@@ -33,7 +33,7 @@ for the backend, **HTML/CSS/JavaScript (Vite)** for the frontend, and
     │
     ├── backend/             # Flask API
     ├── frontend/            # Vite-based UI
-    ├── docs/
+    ├── docs/                # documentation, diagrams
     ├── docker-compose.yml
     └── README.md
 
