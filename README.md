@@ -100,8 +100,8 @@ pytest
 
 ## 🧪 API Endpoints
 
-  Method   Endpoint        Description
-  -------- --------------- ----------------
-  GET      `/tasks`        Get all tasks
-  POST     `/tasks`        Add a new task
-  DELETE   `/tasks/<id>`   Delete a task
+    Method   Endpoint        Description
+    -------- --------------- ----------------
+    GET      `/tasks`        Get all tasks
+    POST     `/tasks`        Add a new task
+    DELETE   `/tasks/<id>`   Delete a task
