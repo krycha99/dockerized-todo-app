@@ -51,9 +51,11 @@ for the backend, **HTML/CSS/JavaScript (Vite)** for the frontend, and
 
 ![Architecture](docs/architecture.png)
 
-**Explanation:** - **Frontend container** (Vite or NGINX for
-production) - **Backend container** (Flask app) - **MongoDB container**
-(database) - **NGINX** reverse proxy (routes `/api/` → backend)
+**Explanation:** 
+- **Frontend container** (Vite or NGINX forproduction) 
+- **Backend container** (Flask app) 
+- **MongoDB container** (database) 
+- **NGINX** reverse proxy (routes `/api/` → backend)
 
 ------------------------------------------------------------------------
 
