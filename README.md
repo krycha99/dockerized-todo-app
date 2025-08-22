@@ -32,16 +32,8 @@ for the backend, **HTML/CSS/JavaScript (Vite)** for the frontend, and
     dockerized-todo-app/
     │
     ├── backend/             # Flask API
-    │   ├── app.py
-    │   ├── requirements.txt
-    │   └── tests/           # Unit tests (pytest)
-    │
     ├── frontend/            # Vite-based UI
-    │   ├── index.html
-    │   ├── styles.css
-    │   └── ...
-    │
-    ├── nginx.conf           # NGINX reverse proxy config
+    ├── docs/
     ├── docker-compose.yml
     └── README.md
 
@@ -106,4 +98,4 @@ pytest
     -------- --------------- ----------------
     GET      `/tasks`        Get all tasks
     POST     `/tasks`        Add a new task
-    DELETE   `/tasks/<id>`   Delete a task
+    DELETE   `/tasks/<title>`   Delete a task
