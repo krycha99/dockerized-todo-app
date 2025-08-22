@@ -27,7 +27,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-      target: prod   # <-- używamy production stage
+      target: prod
     container_name: todo-frontend
     restart: unless-stopped
     ports:
